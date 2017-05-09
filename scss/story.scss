@@ -1,0 +1,67 @@
+
+#story {
+	background: url("images/hero-story.jpeg") no-repeat 60% 0%;
+	background-size: cover;
+	@include mq(less,768) {
+		background: url("images/hero-story-mobile.jpeg") no-repeat 65% 10%;
+		background-size: cover;
+	}
+	.section-heading {
+		background: url("images/title-story.png") no-repeat;
+		background-size: contain;
+		background-position: top right;
+		@include mq(less,700) {
+			background-position: bottom center;
+		}
+	}
+}
+
+#story-text {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 45%;
+	height: 100%;
+	padding: 2rem 1.5rem;
+	background-color: rgba(0,0,0,.45);
+	overflow: scroll;
+	p {
+		padding-bottom: 1.2rem;
+		line-height: 1.5;
+		&:last-of-type {
+			padding-bottom: 0;
+		}
+	}
+	@include mq(less,700) {
+		position: relative;
+		width: 100%;
+		background-color: #eee;
+		p {
+			color: #222;
+			font-size: 1.5rem;
+			line-height: 1.7;
+			padding-bottom: 1.6rem;
+		}
+	}
+}
+
+.text-section {
+	display: flex;
+	justify-content: center;
+	position: absolute;
+	@include mq(less,700) {
+		position: relative;
+		width: 100%;
+		background-color: #eee;
+		p {
+			color: #222;
+			font-size: 1.5rem;
+		}
+	}
+}
+
+
+

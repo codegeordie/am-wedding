@@ -1,0 +1,81 @@
+
+
+#registry {
+	background: url("images/hero-registry.jpeg") no-repeat 45% 0%;
+	background-size: cover;
+	@include mq(less,768) {
+		background: url("images/hero-registry-mobile.jpeg") no-repeat 45% 0%;
+		background-size: cover;
+	}
+	.section-heading {
+		top: 50%;
+		background: url("images/title-registry.png") no-repeat;
+		background-size: contain;
+		background-position: top left;
+		@include mq(less,700) {
+			background-position: center center;
+		}
+	}
+}
+
+#registry-text {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 36%;
+	height: 100%;
+	background-color: rgba(0,0,0,.45);
+	p {
+		padding: 1rem;
+		text-align: center;
+	}
+	@include mq(less,700) {
+		position: relative;
+		width: 100%;
+		background-color: #eee;
+		p {
+			color: #222;
+			font-size: 1.5rem;
+			&:last-of-type {
+				padding-bottom: 5rem;
+			}
+		}
+	}
+}
+
+.registry-link {
+	display: inline-block;
+	max-width: 85%;
+	border: 1px solid #333;
+	padding: 2rem;
+	margin: 2rem auto;
+	text-align: center;
+	background: rgba(231,231,231,.2);
+	transition: .25s;
+	@include touch-check {
+		&:hover {
+			background: rgba(231,231,231,.5);
+		}
+	}
+	img {
+		width: 250px;
+		max-width: 100%;
+	}
+	&:first-of-type {
+		img {
+			margin-bottom: -12px;
+		}
+	}
+	@include mq(less,700) {
+		max-width: 250px;
+		background: none;
+		border: 1px solid rgba(#333,0.3);
+		&:hover {
+			background: none;
+		}
+	}
+}
+

@@ -1,0 +1,48 @@
+
+
+$width-S: "(max-width: 500px)";
+$width-M: "(max-width: 750px)";
+$width-L: "(max-width: 1000px)";
+$width-XL: "(max-width: 2000px)";
+
+@mixin mqX($breakpoint) {
+	@if $breakpoint == S {
+		@media screen and #{$width-S} { @content; }
+	}
+	@else if $breakpoint == M {
+		@media screen and #{$width-M} { @content; }
+	}
+	@else if $breakpoint == L {
+		@media screen and #{$width-L} { @content; }
+	}
+	@else if $breakpoint == XL {
+		@media screen and #{$width-XL} { @content; }
+	}
+}
+
+
+
+@mixin mq($width1,$width2) {
+	@if $width1 == more {
+		@media screen and (min-width: (($width2 + 1) + px)) { @content; }
+	}
+	@elseif $width1 == less {
+		@media screen and (max-width: ($width2 + px)) { @content; }
+	}
+	@else {
+		@media screen and (max-width: ($width1 + px)) and (min-width: ($width2 + px)) { @content; }
+	}
+}
+
+
+
+@mixin touch-check {
+	html:not(.is-touch) & {
+		@content;
+	}
+}
+
+
+
+
+

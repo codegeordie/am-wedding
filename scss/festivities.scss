@@ -1,0 +1,148 @@
+
+
+#festivities {
+	background: url("images/hero-festivities.jpeg") no-repeat 65% 10%;
+	background-size: cover;
+	@include mq(less,768) {
+		background: url("images/hero-festivities-mobile.jpeg") no-repeat 65% 10%;
+		background-size: cover;
+	}
+	.section-heading {
+		background: url("images/title-festivities.png") no-repeat;
+		background-size: contain;
+		background-position: top center;
+		margin-top: 2rem;
+		@include mq(less,700) {
+			background-position: bottom center;
+		}
+	}
+}
+
+#festivities-text {
+	display: flex;
+	position: absolute;
+	top: 30%;
+	left: 5%;
+	width: 90%;
+	height: 65%;
+	padding: 2rem;
+	background-color: rgba(0,0,0,.55);
+	@include mq(less,700) {
+		flex-direction: column;
+		position: relative;
+		top: 0;
+		left: 0;
+		height: auto;
+		width: 100%;
+		background-color: #eee;
+		p {
+			color: #222;
+			font-size: 1.5rem;
+		}
+	}
+}
+
+ul.event-schedule {
+	flex: 5;
+	margin-right: 10%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	li {
+		display: flex;
+		align-items: center;
+		padding-bottom: .5rem;
+		font-family: $font-clean;
+		color: $text-light;
+		&:not(.day) {
+			width: 100%;
+			font-size: $size-small;
+		}
+		&:nth-of-type(2) {
+			justify-content: center;
+		}
+	}
+	@include mq(less,700) {
+		flex: 0;
+		align-items: center;
+		margin-right: 0;
+		li {
+			color: #222;
+			justify-content: center;
+			&:not(.day) {
+				width: 90%;
+				font-size: 1.6rem;
+			}
+		}
+	}
+}
+
+.time {
+	display: inline-block;
+}
+
+.fill {
+	flex: 1;
+	margin: 0 1rem;
+	border-bottom: 1px dotted rgba(255,255,255,.3);
+	height: 0;
+	@include mq(less,700) {
+		border-bottom: 1px dotted rgba(0,0,0,.3);
+	}
+}
+
+.event {
+	display: inline-block;
+}
+
+.day {
+	width: 100%;
+	font-size: $size-medium;
+	margin-bottom: 1rem;
+	border-bottom: 1px solid rgba(255,255,255,.7);
+	&:last-of-type {
+		margin-top: 2rem;
+	}
+	@include mq(less,700) {
+		width: 100%;
+		justify-content: center;
+		font-size: 1.8rem;
+		border-bottom: 1px solid rgba(0,0,0,.5);
+	}
+}
+
+.event-link {
+	text-decoration: underline;
+}
+
+.event-notes {
+	flex: 5;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	p {
+		padding-bottom: 1rem;
+		margin-bottom: 1rem;
+		border-bottom: 1px solid rgba(255,255,255,.5);
+		font-size: $size-small;
+		text-align: center;
+		&:nth-of-type(2) {
+			border-bottom: none;
+		}
+		&:last-of-type {
+			padding-bottom: 0;
+			margin-bottom: 0;
+			border-bottom: none;
+		}
+	}
+	@include mq(less,700) {
+		flex: 0;
+		margin: 3rem 0 1.5rem;
+		padding-top: 3rem;
+		border-top: 4px double rgba(0,0,0,.5);
+		p {
+			border-bottom: 1px solid rgba(0,0,0,.3);
+		}
+	}
+}

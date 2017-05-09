@@ -1,0 +1,108 @@
+@include mq(more,700) {
+
+
+header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	.mobile-navbar {
+		display: none;
+	}
+}
+
+nav {
+	display: flex;
+	justify-content: center;
+	width: 100vw;
+	margin-top: 10vh;
+	h3 {
+		height: 0;
+		text-indent: -10000px;
+	}
+}
+
+ul.nav-list {
+	display: flex;
+	justify-content: center;
+	padding: 5px 0;
+	border: 1px solid $primary-light;
+	transition: .25s;
+	z-index: 8;
+	@include touch-check {
+		&:hover {
+			padding: 5px 10px;
+		}
+	}
+}
+
+li.nav-element {
+	position: relative;
+	@include touch-check {
+		&:hover {
+			a.nav-link {
+				color: transparent;
+				text-shadow: none;
+			}
+			span.nav-hover {
+				color: $text-light;
+				text-shadow: 0px 0px 6px rgba(0,0,0,.9),
+					 		 0px 0px 1px rgba(214,214,214,.5);
+			}
+		}
+	}
+}
+
+a.nav-link {
+	display: block;
+	position: relative;
+	z-index: 10;
+	padding: 1.5rem 2.5rem;
+	font: 1.5rem $font-nav;
+	text-shadow: 0px 0px 6px rgba(0,0,0,.9),
+				 0px 0px 1px rgba(214,214,214,.5);
+	text-transform: lowercase;
+	color: $text-light;
+	transition: .25s;
+}
+
+span.nav-hover {
+	position: absolute;
+	z-index: 9;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	text-shadow: none;
+	color: transparent;
+	text-align: center;
+	font: 2.5rem $font-script;
+	transition: .25s;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;  
+}
+
+header.fixed-nav {
+	position: fixed;
+	z-index: 8;
+	background-color: rgba(0,0,0,.55);
+	border-bottom: 1px solid $primary-light;
+	nav {
+		margin-top: 0;
+	}
+	ul.nav-list {
+		border: none;
+		padding: 0;
+		&:hover {
+			padding: 0;
+		}
+	}
+	li.nav-element {
+		a.nav-link {
+			padding: 1rem 2.5rem;
+		}
+	}
+}
+
+} // media query
+
