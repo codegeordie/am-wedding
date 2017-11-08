@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="rsvp-style.css">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand|Sacramento|Raleway:200,300" rel="stylesheet">
+    <title>RSVP</title>
+</head>
+<body>
+    
+<div class="form-wrapper">
+    <form id="rsvp-search-form" class="rsvp-form" action="rsvp.php" method="POST" target="rsvp-iframe">
+
+        <div>
+            <label for="rsvp-search-first"></label>
+            <input type="text" id="rsvp-search-first" name="first-name" placeholder="your first name" required/>
+        </div>
+        <div>
+            <label for="rsvp-search-last"></label>
+            <input type="text" id="rsvp-search-last" name="last-name" placeholder="and last name" required/>
+        </div>
+        <div>
+            <button class="rsvp-button" type="submit" name="search-submit">Continue</button>
+        </div>
+
+    </form>
+</div>
+
+</body>
+</html>

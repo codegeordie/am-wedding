@@ -1,0 +1,62 @@
+@import "../scss/reset.scss";
+@import "../scss/mediaqueries.scss";
+@import "../scss/vars.scss";
+
+body {
+	display: flex;
+	flex-direction: column;
+}
+
+
+div.wrapper {
+	flex: 1;
+	display: flex;
+	border-top: 1px solid #555;
+	border-bottom: 1px solid #555;
+	margin-bottom: .4rem;
+	&.total {
+		order: 1;
+		justify-content: center;
+		background: rgba(#ba9bbe,1);
+		border: 2px solid #333;
+		.entry {
+			width: auto;
+			flex: 1;
+			font: 20px $font-nav;
+			color: white;
+			line-height: 2.0;
+		}
+	}
+	&.yes {
+		order: 2;
+		background: rgba(lightgreen,0.6);
+		&.respond1 {
+			background: rgba(lightgreen,0.3);
+		}
+	}
+	&.no {
+		order: 3;
+		background: rgba(red,0.6);
+		&.respond1 {
+			background: rgba(red,0.3);
+		}
+	}
+	&.lazy {
+		order: 4;
+		background: rgba(#555,0.3);
+	}
+
+}
+
+p.entry {
+	width: 10rem;
+	border-right: 1px solid #999;
+	font: 16px $font-clean;
+	line-height: 1.4;
+	padding: 0 1rem;
+	&:last-of-type {
+		border-right: none;
+	}
+}
+
+
